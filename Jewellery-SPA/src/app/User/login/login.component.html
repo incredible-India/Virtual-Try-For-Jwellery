@@ -1,0 +1,40 @@
+
+<div style="display: flex; align-items: center; justify-content: center; height: 100vh; padding: 30px; color: white; background-color: black;">
+
+    <!-- Left: Image -->
+    <div style="flex: 1; text-align: center;">
+      <img src="https://media.istockphoto.com/id/1658696488/photo/close-up-of-gold-and-diamond-necklace-with-pair-of-earrings.jpg?s=612x612&w=0&k=20&c=HSj4vHTEUU3mjBYyhJN7OcXyBZr9iCYIrcbQ06lM4iI=" alt="Login Visual" style="max-width: 100%; height: auto; border-radius: 10px;">
+    </div>
+  
+    <!-- Right: Login Form -->
+    <div style="flex: 1; max-width: 400px; background-color: #1a1a1a; padding: 40px; border-radius: 15px; margin-left: 40px;">
+  
+      <h2 style="color: #dc3545; margin-bottom: 30px;">Welcome Back</h2>
+  <form (ngSubmit)="Login()" #userForm="ngForm">
+    
+    <div style="margin-bottom: 20px;">
+      <label for="username" style="display: block; margin-bottom: 8px;">Username</label>
+      <input type="email" id="name" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" style="width: 100%; padding: 10px; border: none; border-radius: 5px;">
+    </div>
+
+    <div style="margin-bottom: 30px;">
+      <label for="password" style="display: block; margin-bottom: 8px;">Password</label>
+      <input type="password" id="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" style="width: 100%; padding: 10px; border: none; border-radius: 5px;">
+    </div>
+
+    <button style="width: 100%; padding: 12px; background-color: #dc3545; color: white; border: none; border-radius: 5px; font-weight: bold;">Login</button>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="/newuser" style="color: #dc3545; text-decoration: none;">New User? Sign up</a>
+  
+     @if(isError){
+      <br>
+      <span  class="text-danger">{{this.errText}}</span>
+     }
+      
+    </div>
+  </form>
+  
+    </div>
+  </div>
+  

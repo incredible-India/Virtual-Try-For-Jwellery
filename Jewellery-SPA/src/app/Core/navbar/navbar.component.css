@@ -1,0 +1,24 @@
+.custom-navbar {
+    background-color:rgb(248, 15, 15); 
+    height: 70px;
+  }
+
+  .custom-navbar .nav-link,
+  .custom-navbar .navbar-brand,
+  .custom-navbar .dropdown-item {
+    color: white !important;
+    font-weight: 500;
+  }
+
+  .custom-navbar .nav-link:hover,
+  .custom-navbar .dropdown-item:hover {
+    color: #fff !important;
+  }
+
+  .custom-navbar .navbar-brand {
+    font-size: 1.75rem;
+  }
+
+  .navbar-nav {
+    align-items: center;
+  }
