@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserClient } from '../../Services/userclient';
 import { CommonModule, NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -20,7 +21,7 @@ export class LoginComponent {
     email : '',
     password:""
   }
-  constructor(private http: HttpClient,private userClient:UserClient) {
+  constructor(private http: HttpClient,private userClient:UserClient,private router:Router) {
 
     
   }
@@ -41,6 +42,7 @@ export class LoginComponent {
       ,next: res => {
         localStorage.setItem('token', res.token);
         this.isError = false;
+        this.router.navigate(['/shopping']);  
       }
     })
   }

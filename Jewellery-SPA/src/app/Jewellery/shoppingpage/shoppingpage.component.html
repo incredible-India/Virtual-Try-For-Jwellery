@@ -1,1 +1,24 @@
-<p>shoppingpage works!</p>
+<div class="container">
+  
+    <div class="grid">
+      <div class="card" *ngFor="let jewellery of jewelleries">
+        <img [src]="jewellery.imageUrl" [alt]="jewellery.name" class="card-img">
+  
+        <div class="card-body">
+          <h3 class="card-title">{{ jewellery.name | slice:0:20 }}</h3>
+          <p class="card-description">{{ jewellery.description | slice:0:50}}</p>
+          <p class="card-price">₹{{ jewellery.price }}</p>
+  
+          <div class="card-footer">
+            <span class="brand">{{ jewellery.brand }}</span>
+            <span class="discount" >
+              {{ jewellery.discount }}% OFF
+            </span>
+          </div>
+  
+          <button class="buy-button">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

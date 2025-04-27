@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserClient } from '../../Services/userclient';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-new-user',
   standalone: true,
@@ -20,7 +21,7 @@ export class NewUserComponent {
   }
 
 
-  constructor(private userClient:UserClient) {
+  constructor(private userClient:UserClient, private router:Router) {
 
     
   }
@@ -37,6 +38,7 @@ export class NewUserComponent {
       ,next: res => {
         localStorage.setItem('token', res.token);
         this.isError =false;
+        this.router.navigate(['/shopping']);
       }
     })
   }
